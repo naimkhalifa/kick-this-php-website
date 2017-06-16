@@ -8,7 +8,5 @@ It lacks a Model and Controller system but I'll probably add if it's needed in s
 
 ### Note
 
-The domain root must target the 'www' folder. Otherwhise url rewriting won't work and furthermore your website won't work. 
-
-So if your url is http://example.dev and your project is located in ~naim/Code/example, 
-it must be setup like this ~naim/Code/example/www => http://example.dev/
+The domain root must target the 'www' folder.
+To easily boot up a php server go to the 'www' folder and run php -S localhost:8888, for example. 
