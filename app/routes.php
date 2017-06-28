@@ -2,18 +2,24 @@
 
 $router = new AltoRouter();
 
-// routes mappings
-$router->map('GET', '/', function() use ($blade) {
-	$title = 'Kick it!';
-	echo $blade->view()->make('hello', compact('title'))->render();
-});
 
-// actual routes activation
-// this line of code must be there !
+$router->map('GET', '/', 'PagesController@home');
+
+// Routes activation, this line must be there !
 $match = $router->match();
 
-if($match) {
-    call_user_func($match['target'], $match['params']);
+
+if ($match === false) {
+	echo "no match found";
 } else {
-	echo "page not found";
+    list($controller, $action) = explode('@', $match['target']);
+
+    $controller = '\\App\\Controllers\\'.$controller;
+    $controller = new $controller(new Philo\Blade\Blade('../resources/views', '../cache/views'));
+
+    if (is_callable([$controller, $action])) {
+    	$controller->{$action}();
+    } else {
+    	echo "Couldn't call controller action for this route";
+    }
 }
