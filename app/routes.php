@@ -4,6 +4,9 @@ $router = new AltoRouter();
 
 
 $router->map('GET', '/', 'PagesController@home');
+$router->map('GET', '/contact', 'ContactController@showContact');
+$router->map('POST', '/contact', 'ContactController@postContactForm');
+
 
 // Routes activation, this line must be there !
 $match = $router->match();
