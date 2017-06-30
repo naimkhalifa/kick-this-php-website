@@ -9,11 +9,12 @@ It lacks a Models system but I'll probably add if it's needed in some future poi
 ### Installation
 
 1. Clone this repository
-2. Go the the `/www` folder of your cloned repo
-3. Run `php -S localhost:8888`
-4. Open your favorite browser and navigate to `http://localhost:8888/`
-5. You should see a sample homepage 🏄
+2. Go to the root folder of your cloned version of this repo
+3. Run `composer install` to install the project dependencies
+4. Go the the `/www` folder
+5. Run `php -S localhost:8888`
+6. Open your favorite browser and navigate to `http://localhost:8888/`
+7. You should see a sample homepage 🏄
 
 + Additionally, you can have a look at the boilerplate contact form located and `http://localhost:8888/contact` .
 Its logic is located in the `ContactController` class.
-
