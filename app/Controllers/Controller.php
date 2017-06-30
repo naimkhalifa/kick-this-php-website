@@ -4,7 +4,7 @@ namespace App\Controllers;
 
 use Philo\Blade\Blade;
 
-class Controller
+abstract class Controller
 {
 	/**
 	 * The blade instance
