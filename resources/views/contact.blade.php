@@ -10,16 +10,18 @@
                         This is a boiletplate for your contact form. Feel free to modify it as needed. <br />
                         You can even remove this page. The validation logic is in the ContactController.
                     </div>
+
                     @if (isset($_SESSION['contact']['errors']))
-                    <div class="alert alert-danger">
-                        An error has occured with your input. Please check all the fields and submit again.
-                    </div>
-                    <?php $old = $_SESSION['contact']['old']; ?>
-                    @elseif (isset($_SESSION['contact']['success']))
-                    <div class="alert alert-success">
-                        Thank you. We will come back to you as soon as possible.
-                    </div>
+                        <div class="alert alert-danger">
+                            An error has occured with your input. Please check all the fields and submit again.
+                        </div>
+                        <?php $old = $_SESSION['contact']['old']; ?>
+                        @elseif (isset($_SESSION['contact']['success']))
+                        <div class="alert alert-success">
+                            Thank you. We will come back to you as soon as possible.
+                        </div>
                     @endif
+                    
                     <?php $_SESSION['contact'] = null; ?>
 
                     <form action="/contact" method="post" novalidate="">

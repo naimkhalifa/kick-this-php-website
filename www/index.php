@@ -1,14 +1,17 @@
 <?php
 
+// Start the session
 session_start();
 
-// Composer autoload
+// Require composer autoloader ...
 require '../vendor/autoload.php';
 
-// Dotenv
+// Boot up Dotenv library ...
 $dotenv = new Dotenv\Dotenv(dirname(__DIR__));
 $dotenv->load();
 
+// Require constants helper file ...
 require '../config/constants.php';
 
+// Finally require the routes file
 require '../app/routes.php';
